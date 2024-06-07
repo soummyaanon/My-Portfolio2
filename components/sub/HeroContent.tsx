@@ -55,12 +55,14 @@ const HeroContent = () => {
   <br />
   Smart India Hackathon Winner 2023 🏆 | 👨🏻‍🎓Student | Future Full Stack Dev 🌐 | Tech Enthusiast 💻.
 </motion.p>
-        <motion.a
-          variants={slideInFromLeft(1)}
-          className="py-2 button-primary text-center text-white cursor-pointer rounded-lg max-w-[200px]"
-        >
-          Learn More!
-        </motion.a>
+<motion.a
+  variants={slideInFromLeft(1)}
+  className="py-2 button-primary text-center text-white cursor-pointer rounded-lg max-w-[200px]"
+  href="https://drive.google.com/file/d/1EJuXLPYFLKwW8GcGxOBfSFI2QEp4wZe0/view?usp=share_link" // replace with your CV link
+  download
+>
+  Download CV
+</motion.a>
       </div>
 
       <motion.div
