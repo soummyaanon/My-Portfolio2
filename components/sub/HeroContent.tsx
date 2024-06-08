@@ -22,11 +22,13 @@ const HeroContent = () => {
   variants={slideInFromTop}
   className="Welcome-box py-[10px] px-[9px] opacity-[0]"
 >
-  <img 
+<Image 
     src="/imgi.jpeg" 
     alt="description_of_image" 
+    width={192} // Add this line
+    height={192} // Add this line
     className="w-48 h-48 rounded-full mr-3 filter saturate-200" 
-  />
+/>
   <SparklesIcon className="text-[#b49bff] mr-[10px] h-5 w-5" />
 </motion.div>
 <motion.div
@@ -50,7 +52,7 @@ const HeroContent = () => {
   variants={slideInFromLeft(0.8)}
   className="text-lg text-gray-400 my-5 max-w-[600px] text-justify"
 >
-  I'm a dedicated Frontend Web Developer with a passion for creating intuitive, user-friendly, and high-performance websites. I have a strong understanding of modern web technologies and a keen eye for design.
+  I&apos;m a dedicated Frontend Web Developer with a passion for creating intuitive, user-friendly, and high-performance websites. I have a strong understanding of modern web technologies and a keen eye for design.
   <br />
   <br />
   Smart India Hackathon Winner 2023 🏆 | 👨🏻‍🎓Student | Future Full Stack Dev 🌐 | Tech Enthusiast 💻.

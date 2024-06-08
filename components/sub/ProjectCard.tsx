@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaExternalLinkSquareAlt } from "react-icons/fa";
+import Image from 'next/image'; // Import the Image component
 
 interface Props {
   src: string;
@@ -17,12 +18,14 @@ const ProjectCard = ({ src, title, description, url, className }: Props) => {
       </div>
 
       <div className="flex flex-col space-y-4 h-full overflow-hidden rounded-lg shadow-lg border border-[#4b2d87]">
-        <img
-          src={src}
-          alt={title}
-          className="w-full object-contain"
-        />
-
+<Image
+   src={src}
+   alt={title}
+   layout="responsive"
+   width={500} // Add this line
+   height={300} // Add this line
+   className="w-full object-contain"
+/>
         <div className={`p-4 flex-grow w-full flex flex-col justify-center ${className}`}> {/* Apply the className here */}
           <h1 className="text-2xl font-semibold text-white">{title}</h1>
           <p className="mt-2 text-gray-300">{description}</p>
