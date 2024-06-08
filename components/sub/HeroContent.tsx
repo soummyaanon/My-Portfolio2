@@ -61,7 +61,7 @@ const HeroContent = () => {
   variants={slideInFromLeft(1)}
   whileHover={{ scale: 1.1 }} // scale up when hovered
   whileTap={{ scale: 0.9 }} // scale down when clicked
-  className="py-2 button-primary text-center text-white cursor-pointer rounded-lg max-w-[200px] z-50 transition-all duration-200 ease-in-out hover:bg-blue-500" // change background color on hover
+  className="py-2 button-primary text-center text-white cursor-pointer rounded-lg max-w-[200px] z-50  hover:bg-blue-500" // change background color on hover
   href="https://drive.google.com/file/d/1EJuXLPYFLKwW8GcGxOBfSFI2QEp4wZe0/view?usp=share_link" // replace with your CV link
   download
 >
