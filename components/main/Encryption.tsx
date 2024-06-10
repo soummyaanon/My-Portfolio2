@@ -1,53 +1,101 @@
 "use client";
-import React from "react";
-
+import React, { useState, useEffect } from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { slideInFromTop } from "@/utils/motion";
 
-
 const Encryption = () => {
+  const images = ["/image1.png", "/image2.png", "/image3.jpeg"]; // replace with your images
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 3000); // Change slide every 3 seconds
+
+    return () => clearInterval(interval);
+  }, [images.length]);
+
+  const radius = 250; // Adjust the radius of the carousel
+  const angleStep = (2 * Math.PI) / images.length;
+
   return (
-    <div className="flex flex-row relative items-center justify-center min-h-screen w-full h-full">
-      <div className="absolute w-auto h-auto top-0 z-[5]">
+    <div className="flex flex-col items-center justify-center min-h-screen w-full h-full bg-black relative overflow-hidden">
+      <div className="absolute top-0 z-10 mb-10">
         <motion.div
           variants={slideInFromTop}
-          className="text-[40px] font-medium text-center text-gray-200"
+          initial="initial"
+          animate="animate"
+          className="text-4xl font-semibold text-center text-gray-200"
         >
-          Performance
+          Achievements
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
             {" "}
             &{" "}
           </span>
-          Security
+          Awards
         </motion.div>
       </div>
 
-      <div className="flex flex-col items-center justify-center translate-y-[-50px] absolute z-[20] w-auto h-auto">
-        <div className="flex flex-col items-center group cursor-pointer w-auto h-auto">
-          
+      <div className="relative flex items-center justify-center mt-20 w-full h-[500px] perspective-1000">
+        {images.map((image, index) => {
+          const angle = index * angleStep - currentIndex * angleStep;
+          const x = radius * Math.sin(angle);
+          const z = radius * Math.cos(angle);
 
-        </div>
-
-        <div className="Welcome-box px-[15px] py-[4px] z-[20] brder my-[20px] border-[#7042f88b] opacity-[0.9]">
-          <h1 className="Welcome-text text-[12px]">Encryption</h1>
-        </div>
+          return (
+            <div
+              key={index}
+              className="absolute w-64 h-64"
+              style={{
+                transform: `translateX(${x}px) translateZ(${z}px) rotateY(${
+                  angle * (180 / Math.PI)
+                }deg)`,
+                transition: "transform 1s",
+              }}
+            >
+              <div className="relative w-full h-full p-2 bg-gradient-to-r from-purple-600 via-pink-500 to-red-500 rounded-lg shadow-2xl">
+                <div className="absolute inset-0 bg-black opacity-60 rounded-lg"></div>
+                <Image
+                  src={image}
+                  alt={`Certificate ${index + 1}`}
+                  layout="fill"
+                  className="object-cover rounded-2xl "
+                />
+              </div>
+            </div>
+          );
+        })}
       </div>
-      <div className="absolute z-[20] bottom-[10px] px-[5px]">
+
+
+      <div className="absolute z-[20] bottom-[10px] px-[5px] mt-10">
         <div className="cursive text-[20px] font-medium text-center text-gray-300">
-          Secure your data with end-to-end encryption
+        There are two ways to write error-free programs; only the third one works.
         </div>
       </div>
 
-      <div className="w-full flex items-start justify-center absolute">
+      <div className="w-full h-full flex items-center justify-center absolute top-0 left-0 pointer-events-none">
         <video
           loop
           muted
           autoPlay
           playsInline
           preload="false"
-          className="w-full h-auto"
-          src="/encryption.webm/"
+          className="w-full h-full object-cover opacity-50"
+          src="/encryption.webm"
         />
+      </div>
+
+      <div className="absolute bottom-5 flex space-x-2 z-20">
+        {images.map((_, index) => (
+          <div
+            key={index}
+            className={`w-3 h-3 rounded-full transition-all duration-300 ${
+              currentIndex === index ? "bg-white" : "bg-gray-500"
+            }`}
+          ></div>
+        ))}
       </div>
     </div>
   );

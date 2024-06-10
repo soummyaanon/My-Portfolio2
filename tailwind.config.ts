@@ -25,8 +25,11 @@ const config: Config = {
       scale: {
         '90': '0.9',
       },
-      rotate: { // Add this
+      rotate: {
         '45': '45deg',
+      },
+      boxShadow: { // Add this
+        'color': '0 4px 14px 0 rgba(37, 99, 235, 0.39)',
       },
     },
   },
