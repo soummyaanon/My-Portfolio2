@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { slideInFromTop } from "@/utils/motion";
 
 const Encryption = () => {
-  const images = ["/image1.png", "/image2.png", "/image3.png"]; 
+  const images = ["/image1.png", "/Image2.png", "/image3.png"]; 
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
