@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { slideInFromTop } from "@/utils/motion";
 
 const Encryption = () => {
-  const images = ["/image1.png", "/image2.png", "/image3.jpeg"]; // replace with your images
+  const images = ["/image1.png", "/image2.png", "/image3.jpeg"]; 
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
@@ -87,16 +87,7 @@ const Encryption = () => {
         />
       </div>
 
-      <div className="absolute bottom-5 flex space-x-2 z-20">
-        {images.map((_, index) => (
-          <div
-            key={index}
-            className={`w-3 h-3 rounded-full transition-all duration-300 ${
-              currentIndex === index ? "bg-white" : "bg-gray-500"
-            }`}
-          ></div>
-        ))}
-      </div>
+
     </div>
   );
 };
