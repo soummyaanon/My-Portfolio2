@@ -23,10 +23,17 @@ const Projects = () => {
   className="text-justify"
 />
 <ProjectCard
+  src="/book.png"
+  title="BOOK-Pedia"
+  description="Discover Your Next Favorite Read with Book Pedia - A Simple Web AppvHey book lovers! 📖 I just developed a web app called Book Pedia to make finding your next read super easy."
+  url="https://bookpediaa.vercel.app/"
+  className="text-justify"
+/>
+<ProjectCard
   src="/SpaceWebsite.png"
   title="Space Themed Website"
   description="Showcasing my skills, projects, and experiences, this portfolio website is built with modern web technologies. It's designed for optimal performance and user experience, providing a comprehensive view of my professional journey and technical abilities."
-  url="https://your-project-url-3.com"
+  url="https://soumyar.vercel.app/"
   className="text-justify"
 />
       </div>
