@@ -59,10 +59,10 @@ const HeroContent = () => {
 </motion.p>
 <motion.a
   variants={slideInFromLeft(1)}
-  whileHover={{ scale: 1.1 }} // scale up when hovered
-  whileTap={{ scale: 0.9 }} // scale down when clicked
+  whileHover={{ scale: 1.1 }}
+  whileTap={{ scale: 0.9 }} 
   className="py-2 button-primary text-center text-white cursor-pointer rounded-lg max-w-[200px] z-50  hover:bg-blue-500" // change background color on hover
-  href="https://drive.google.com/file/d/1EJuXLPYFLKwW8GcGxOBfSFI2QEp4wZe0/view?usp=share_link" // replace with your CV link
+  href="https://drive.google.com/file/d/14tI3Kr1Gs5yNBynSU4bnZG0Rx7c3fWDb/view?usp=sharing" // replace with your CV link
   download
 >
   <span className="mr-2">📥</span> Download CV
