@@ -31,7 +31,7 @@ const Projects = () => {
 />
 <ProjectCard
   src="/SpaceWebsite.png"
-  title="Space Themed Website"
+  title="PortFolio Website"
   description="Showcasing my skills, projects, and experiences, this portfolio website is built with modern web technologies. It's designed for optimal performance and user experience, providing a comprehensive view of my professional journey and technical abilities."
   url="https://soumyar.vercel.app/"
   className="text-justify"
