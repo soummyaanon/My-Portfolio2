@@ -15,10 +15,3 @@ This is my personal portfolio website built with Next.js and Tailwind CSS. It sh
 - **Tailwind CSS**: A utility-first CSS framework for styling the website.
 - **Vercel**: For hosting the website.
 
-## Running the Project Locally
-
-First, clone the repository:
-
-```bash
-git clone https://github.com/username/portfolio.git
-cd portfolio
