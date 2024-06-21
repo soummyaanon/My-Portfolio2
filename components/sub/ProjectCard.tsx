@@ -14,10 +14,11 @@ const ProjectCard = ({ src, title, description, url, className }: Props) => {
   return (
     <a href={url} target="_blank" rel="noopener noreferrer" className="block relative">
       <div className="absolute z-50 top-0 right-0 m-2">
-        <div className="space-y-1">
-          <HiOutlineChevronDoubleUp size={25} className="text-purple-500 hover:text-purple-800 transition-transform duration-500 ease-in-out transform hover:-translate-y-1 backdrop-blur" />
-          <HiOutlineChevronDoubleUp size={25} className="text-purple-500 hover:text-purple-800 transition-transform duration-700 ease-in-out transform hover:-translate-y-1 backdrop-blur" />
-         
+        <div className="space-y-4">
+          <button className="inline-flex items-center space-x-2 text-lg transition-transform duration-500 ease-in-out transform hover:-translate-y-1 backdrop-blur-lg bg-gray-900 bg-opacity-40 rounded-lg p-2">
+            <HiOutlineChevronDoubleUp size={26} style={{ color: '#4f46e5' }} />
+            <span className="font-extrabold" style={{ color: '#4f46e5' }}>Demo</span>
+          </button>
         </div>
       </div>
 
