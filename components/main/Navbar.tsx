@@ -26,6 +26,10 @@ const Navbar = () => {
             height={100}
             className="cursor-pointer hover:animate-slowspin"
           />
+            <span className="font-bold ml-[10px] hidden md:block text-purple-400">
+              Berojgar- Dev
+          </span>
+
 
 
         </a>
