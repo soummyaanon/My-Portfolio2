@@ -27,8 +27,11 @@ const Navbar = () => {
             className="cursor-pointer hover:animate-slowspin"
           />
             <span className="font-bold ml-[10px] hidden md:block text-purple-400">
-              Berojgar- Dev
+
+              printf("Bejorgar-DEV!");
+              
           </span>
+
 
 
 
