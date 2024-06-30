@@ -28,7 +28,7 @@ const Navbar = () => {
           />
             <span className="font-bold ml-[10px] hidden md:block text-purple-400">
 
-              printf("Bejorgar-DEV!");
+              Berojgar--DEV
               
           </span>
 
