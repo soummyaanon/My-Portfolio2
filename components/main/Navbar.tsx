@@ -28,9 +28,9 @@ const Navbar = () => {
           />
             <span className="font-bold ml-[10px] bg-gradient-to-r from-purple-500 to-cyan-500 text-transparent bg-clip-text">
 
-              Berojgar DEV
+              BEROJGAR DEV
               
-          </span>
+            </span>
 
 
 
