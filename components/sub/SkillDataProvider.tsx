@@ -31,8 +31,8 @@ const SkillDataProvider = ({ src, width, height, index }: { src: string, width: 
           animation: tilt 5s infinite alternate ease-in-out;
         }
         @keyframes tilt {
-          0% { transform: rotateX(5deg) rotateY(5deg); }
-          100% { transform: rotateX(-5deg) rotateY(-5deg); }
+          0%, 100% { transform: rotateX(5deg) rotateY(5deg); }
+          50% { transform: rotateX(-5deg) rotateY(-5deg); }
         }
       `}</style>
     </motion.div>
