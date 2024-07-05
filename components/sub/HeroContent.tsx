@@ -118,7 +118,7 @@ const HeroContent = () => {
           whileHover={{ scale: 1.05, boxShadow: "0px 0px 8px rgba(147, 51, 234, 0.5)" }}
           whileTap={{ scale: 0.95 }}
           className="py-3 px-6 bg-gradient-to-r from-purple-500 to-cyan-500 text-white font-semibold rounded-lg shadow-md transition-all duration-300 ease-in-out inline-flex items-center space-x-2 w-max"
-          href="https://drive.google.com/file/d/14tI3Kr1Gs5yNBynSU4bnZG0Rx7c3fWDb/view?usp=sharing"
+          href="https://drive.google.com/file/d/1IYjDK3hAgeZ5QQNcGi3CeAZoXcmoWmi0/view?usp=sharing"
           download
         >
           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
