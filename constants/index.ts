@@ -48,7 +48,7 @@ export const Skill_data = [
       height: 80,
     },
     {
-      skill_name: "Next js 13",
+      skill_name: "Next js 14",
       Image: "/next.png",
       width: 80,
       height: 80,
@@ -80,20 +80,20 @@ export const Skill_data = [
   
   ];
   
-  export const Socials = [
-    {
-      name: "Discord",
-      src: "/instagram.svg",
-    },
-    {
-      name: "Facebook",
-      src: "/facebook.svg",
-    },
-    {
-      name: "Instagram",
-      src: "/discord.svg",
-    },
-  ];
+  // export const Socials = [
+  //   {
+  //     name: "Discord",
+  //     src: "/instagram.svg",
+  //   },
+  //   {
+  //     name: "Facebook",
+  //     src: "/facebook.svg",
+  //   },
+  //   {
+  //     name: "Instagram",
+  //     src: "/discord.svg",
+  //   },
+  // ];
   
   
   
@@ -191,24 +191,24 @@ export const Skill_data = [
       width: 70,
       height: 70,
     },
-    {
-      skill_name: "My SQL",
-      Image: "/mysql.png",
-      width: 70,
-      height: 70,
-    },
+    // {
+    //   skill_name: "My SQL",
+    //   Image: "/mysql.png",
+    //   width: 70,
+    //   height: 70,
+    // },
     {
       skill_name: "Prisma",
       Image: "/prisma.webp",
       width: 70,
       height: 70,
     },
-    {
-      skill_name: "Graphql",
-      Image: "/graphql.png",
-      width: 80,
-      height: 80,
-    },
+    // {
+    //   skill_name: "Graphql",
+    //   Image: "/graphql.png",
+    //   width: 80,
+    //   height: 80,
+    // },
   ];
   
   // export const Full_stack = [
