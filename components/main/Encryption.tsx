@@ -35,13 +35,11 @@ const Encryption = () => {
         </span>
         Awards
       </motion.div>
-
       <div className="relative flex items-center justify-center w-full h-[600px] perspective-1000">
         {images.map((image, index) => {
           const angle = index * angleStep - currentIndex * angleStep;
           const x = radius * Math.sin(angle);
           const z = radius * Math.cos(angle) - radius;
-
           return (
             <motion.div
               key={index}
@@ -69,16 +67,14 @@ const Encryption = () => {
           );
         })}
       </div>
-
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.5 }}
         className="text-xl font-medium text-center text-gray-300 mt-10 px-5 max-w-2xl cursive text-[20px] "
       >
-        "There are two ways to write error-free programs; only the third one works."
+        &ldquo;There are two ways to write error-free programs; only the third one works.&rdquo;
       </motion.div>
-
       <div className="w-full h-full absolute top-0 left-0 pointer-events-none">
         <video
           loop
