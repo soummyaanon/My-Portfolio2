@@ -1,47 +1,84 @@
 import React from "react";
-import { FaGithub, FaDiscord, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaDiscord, FaInstagram, FaLinkedin, FaEnvelope } from "react-icons/fa";
 import { FaSquareXTwitter } from "react-icons/fa6";
 
+type Item = {
+  href: string;
+  icon: React.ReactNode;
+  text: string;
+  title: string;
+};
+
+type FooterSectionProps = {
+  title: string;
+  items: Item[];
+};
+
+const FooterSection = ({ title, items }: FooterSectionProps) => (
+  <div className="flex flex-col items-center md:items-start mb-8 md:mb-0">
+    <h3 className="font-bold text-xl mb-4">{title}</h3>
+    <ul>
+      {items.map((item, index) => (
+        <li key={index} className="mb-3">
+          <a
+            href={item.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center hover:text-gray-400 transition-colors duration-300"
+            title={item.title}
+          >
+            {item.icon}
+            <span className="ml-2 font-semibold">{item.text}</span>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+);
+
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
+  const sections = [
+    {
+      title: "Community",
+      items: [
+        { href: "https://github.com/soummyaanon", icon: <FaGithub size={20} />, text: "@soummyaanon", title: "GitHub" },
+        { href: "https://www.discord.com/soumyapanda2000", icon: <FaDiscord size={20} />, text: "soumyapanda2000", title: "Discord" },
+      ],
+    },
+    {
+      title: "Social Media",
+      items: [
+        { href: "https://instagram.com/anonymous__warior", icon: <FaInstagram size={20} />, text: "@anonymous__warior", title: "Instagram" },
+        { href: "https://twitter.com/Thesourya2000", icon: <FaSquareXTwitter size={20} />, text: "@Thesourya2000", title: "Twitter" },
+        { href: "https://www.linkedin.com/in/soumypanda", icon: <FaLinkedin size={20} />, text: "@soumyapanda12", title: "LinkedIn" },
+      ],
+    },
+    {
+      title: "Contact Me",
+      items: [
+        { href: "mailto:soumyaranjanpanda910@gmail.com", icon: <FaEnvelope size={20} />, text: "soumyaranjanpanda910@gmail.com", title: "Email" },
+      ],
+    },
+  ];
+
   return (
-    <div className="w-full h-full bg-transparent text-gray-200 shadow-lg p-4 relative z-50">
-        <div className="w-full flex flex-col items-center justify-center m-auto">
-            <div className="w-full h-full flex flex-row items-center justify-around flex-wrap">
-                <div className="min-w-[200px] h-auto flex flex-col items-center justify-start">
-                    <div className="font-bold text-lg">Community</div>
-                    <a href="https://github.com/soummyaanon" target="_blank" rel="noopener noreferrer" className="flex flex-row items-center my-4 cursor-pointer font-bold" title="GitHub">
-                        <FaGithub /><span className="ml-2">@soummyaanon</span>
-                    </a>
-                    <a href="https://www.discord.com/soumyapanda2000" target="_blank" rel="noopener noreferrer" className="flex flex-row items-center my-4 cursor-pointer font-bold" title="Discord">
-                        <FaDiscord /><span className="ml-2">soumyapanda2000</span>
-                    </a>
-                </div>
-                <div className="min-w-[200px] h-auto flex flex-col items-center justify-start">
-                    <div className="font-bold text-lg">Social Media</div>
-                    <a href="https://instagram.com/anonymous__warior" target="_blank" rel="noopener noreferrer" className="flex flex-row items-center my-4 cursor-pointer font-bold" title="Instagram">
-                        <FaInstagram /><span className="ml-2">@anonymous__warior</span>
-                    </a>
-                    <a href="https://twitter.com/Thesourya2000" target="_blank" rel="noopener noreferrer" className="flex flex-row items-center my-4 cursor-pointer font-bold" title="Twitter">
-                        <FaSquareXTwitter /><span className="ml-2">@Thesourya2000</span>
-                    </a>
-                    <a href="https://www.linkedin.com/in/soumypanda" target="_blank" rel="noopener noreferrer" className="flex flex-row items-center my-4 cursor-pointer font-bold" title="LinkedIn">
-                        <FaLinkedin /><span className="ml-2">@soumyapanda12</span>
-                    </a>
-                </div>
-                <div className="min-w-[200px] h-auto flex flex-col items-center justify-start">
-                    <div className="font-bold text-lg">Contact Me</div>
-                    <a href="mailto:soumyaranjanpanda910@gmail.com" target="_blank" rel="noreferrer" className="flex flex-row items-center my-4 cursor-pointer font-bold">
-                        <span className="text-lg ml-2">soumyaranjanpanda910@gmail.com</span>    
-                    </a>
-                </div>
-            </div>
-
-            <div className="mb-5 text-base text-center font-bold">
-                &copy; @soumyaanon {new Date().getFullYear()} Inc. All rights reserved
-            </div>
+    <footer className="w-full bg-transparent text-gray-200 shadow-lg p-8 relative z-50">
+      <div className="max-w-6xl mx-auto">
+        <div className="flex flex-wrap justify-between mb-8">
+          {sections.map((section, index) => (
+            <FooterSection key={index} title={section.title} items={section.items} />
+          ))}
         </div>
-    </div>
-  )
-}
+        <div className="border-t border-gray-700 pt-8 text-center">
+          <p className="text-sm font-semibold">
+            &copy; @soumyaanon {currentYear} Inc. All rights reserved
+          </p>
+        </div>
+      </div>
+    </footer>
+  );
+};
 
-export default Footer
+export default Footer;

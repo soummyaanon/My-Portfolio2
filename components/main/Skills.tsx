@@ -1,44 +1,43 @@
-"use client";
-
-import {
-  Backend_skill,
-  Frontend_skill,
-  // Skill_data,
-} from "@/constants";
+import { Backend_skill, Frontend_skill } from "@/constants";
 import React from "react";
-// import SkillDataProvider from "../sub/SkillDataProvider";
 import SkillText from "../sub/SkillText";
 import Image from "next/image";
 
 const SkillCard = ({ skill }: { skill: any }) => {
   return (
-    <div className="skill-card">
-      <div className="skill-card-inner">
-        <Image
-          src={skill.Image}
-          width={40}
-          height={40}
-          alt={skill.skill_name}
-          className="rounded-full"
-        />
-        <p className="text-xs mt-2 text-center text-white">{skill.skill_name}</p>
+    <div className="group perspective-1000">
+      <div className="relative h-44 w-full transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateX(10deg)_rotateY(10deg)]">
+        <div className="absolute inset-0">
+          <div className="flex h-full w-full flex-col items-center justify-center rounded-xl bg-gradient-to-br from-purple-500/20 to-cyan-500/20 p-4 backdrop-blur-sm transition-all duration-300 group-hover:shadow-xl group-hover:shadow-purple-500/25">
+            <Image
+              src={skill.Image}
+              width={60}
+              height={60}
+              alt={skill.skill_name}
+              className="rounded-full transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12"
+            />
+            <p className="mt-4 text-center text-sm font-semibold text-white text-shadow transition-all duration-300 group-hover:translate-z-10">
+              {skill.skill_name}
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   );
 };
 
-const SkillSection = ({ skills, title }: { skills: any[]; title: string }) => {
+const SkillSection = ({ skills, title }: { skills: any[], title: string }) => {
   return (
-<div className="mb-10">
-  <h3 className="text-2xl mb-4 bg-gradient-to-r from-purple-500 to-cyan-500 bg-clip-text text-transparent">
-    {title}
-  </h3>
-  <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-10 gap-4">
-    {skills.map((skill: any, index: number) => (
-      <SkillCard key={index} skill={skill} />
-    ))}
-  </div>
-</div>
+    <div className="mb-16">
+      <h3 className="mb-6 inline-block bg-gradient-to-r from-purple-500 to-cyan-500 bg-clip-text text-3xl font-bold text-transparent">
+        {title}
+      </h3>
+      <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6">
+        {skills.map((skill, index) => (
+          <SkillCard key={index} skill={skill} />
+        ))}
+      </div>
+    </div>
   );
 };
 
@@ -46,19 +45,18 @@ const Skills = () => {
   return (
     <section
       id="skills"
-      className="flex flex-col items-center justify-center gap-3 h-full relative overflow-hidden pb-80 py-20"
+      className="relative overflow-hidden py-20"
     >
-      <SkillText />
-      
-      <div className="w-full max-w-[1200px] mx-auto px-3">
+      <div className="container mx-auto px-4">
+        <SkillText />
         <SkillSection skills={Frontend_skill} title="Frontend Skills" />
         <SkillSection skills={Backend_skill} title="Backend Skills" />
       </div>
-      
-      <div className="w-full h-full absolute top-0 left-0 z-[-1]">
-        <div className="w-full h-full opacity-30 absolute flex items-center justify-center bg-cover">
+
+      <div className="absolute inset-0 z-[-1]">
+        <div className="absolute inset-0 flex items-center justify-center bg-cover opacity-30">
           <video
-            className="w-full h-auto"
+            className="h-auto w-full object-cover"
             preload="false"
             playsInline
             loop
@@ -68,51 +66,6 @@ const Skills = () => {
           />
         </div>
       </div>
-      
-      <style jsx global>{`
-        .skill-card {
-          perspective: 1000px;
-          transition: transform 0.3s;
-        }
-        
-        .skill-card:hover {
-          transform: translateY(-10px);
-        }
-        
-        .skill-card-inner {
-          background: rgba(123, 97, 255, 0.2);
-          border: 1px solid rgba(255, 255, 255, 0.1);
-          border-radius: 12px;
-          padding: 16px;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          backdrop-filter: blur(5px);
-          transition: box-shadow 0.3s ease;
-          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        
-        .skill-card:hover .skill-card-inner {
-          box-shadow: 0 8px 12px rgba(123, 97, 255, 0.3);
-        }
-        
-        .skill-card-inner img {
-          width: 48px;
-          height: 48px;
-          transition: transform 0.3s ease;
-        }
-        
-        .skill-card:hover .skill-card-inner img {
-          transform: scale(1.1);
-        }
-        
-        .skill-card-inner p {
-          font-size: 0.75rem;
-          margin-top: 8px;
-          font-weight: 500;
-        }
-      `}</style>
     </section>
   );
 };
