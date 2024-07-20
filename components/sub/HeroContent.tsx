@@ -40,23 +40,46 @@ const HeroContent = () => {
     textControls.start((i) => ({
       opacity: 1,
       y: 0,
-      transition: { delay: i * 0.2, duration: 0.5, ease: "easeOut" },
+      transition: { delay: i * 0.1, duration: 0.6, ease: [0.6, -0.05, 0.01, 0.99] },
     }));
   }, [textControls]);
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.3,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: [0.6, -0.05, 0.01, 0.99] },
+    },
+  };
 
   return (
     <motion.div
       initial="hidden"
       animate="visible"
+      variants={containerVariants}
       className="flex flex-row items-center justify-between px-20 mt-40 w-full z-[20]"
     >
-      <div className="flex flex-col gap-8 max-w-[600px]">
+      <motion.div className="flex flex-col gap-8 max-w-[600px]" variants={containerVariants}>
         <motion.div 
           ref={containerRef}
           variants={slideInFromTop}
           className="relative inline-block perspective-1000"
           onMouseMove={handleMouseMove}
           onMouseLeave={handleMouseLeave}
+          whileHover={{ scale: 1.05 }}
+          transition={{ duration: 0.3, ease: "easeInOut" }}
         >
           <motion.div
             className="relative w-48 h-48 rounded-full overflow-hidden"
@@ -65,6 +88,7 @@ const HeroContent = () => {
               rotateY: rotateY,
               transformStyle: "preserve-3d",
             }}
+            transition={{ type: "spring", stiffness: 300, damping: 30 }}
           >
             <Image
               src="/imgi.png"
@@ -80,7 +104,6 @@ const HeroContent = () => {
             />
              <SparklesIcon className="text-[#b49bff] absolute -top-2 -right-2 h-6 w-6" />
           </motion.div>
-
         </motion.div>
 
         <div className="space-y-2">
@@ -100,25 +123,27 @@ const HeroContent = () => {
         </div>
 
         <motion.p
-          variants={slideInFromLeft(0.7)}
+          variants={itemVariants}
           className="text-lg text-gray-400 leading-relaxed"
         >
           I&apos;m a dedicated Frontend Web Developer with a passion for creating intuitive, user-friendly, and high-performance websites. I have a strong understanding of modern web technologies and a keen eye for design.
         </motion.p>
 
         <motion.p
-          variants={slideInFromLeft(0.9)}
+          variants={itemVariants}
           className="text-lg text-gray-400 font-semibold"
         >
           Smart India Hackathon Winner 2023 🏆 | 👨🏻‍🎓Student | Future Full Stack Dev 🌐 | Tech Enthusiast 💻
         </motion.p>
 
         <motion.a
-          variants={slideInFromLeft(1.1)}
+          variants={itemVariants}
           whileHover={{ scale: 1.05, boxShadow: "0px 0px 8px rgba(147, 51, 234, 0.5)" }}
           whileTap={{ scale: 0.95 }}
           className="py-3 px-6 bg-gradient-to-r from-purple-500 to-cyan-500 text-white font-semibold rounded-lg shadow-md transition-all duration-300 ease-in-out inline-flex items-center space-x-2 w-max"
-          href="https://drive.google.com/file/d/1ITlO1CnELDTmo_2NVfOBZkJ31OKDrxed/view?usp=sharing"
+          href="https://drive.google.com/file/d/1cokDsCn5i3mTBZOzAg39R1LlubjDV1t-/view?usp=sharing"
+          target="_blank"
+          rel="noopener noreferrer"
           download
         >
           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -126,7 +151,7 @@ const HeroContent = () => {
           </svg>
           <span>Download CV</span>
         </motion.a>
-      </div>
+      </motion.div>
       
       <motion.div
         variants={slideInFromRight(0.5)}
@@ -134,19 +159,39 @@ const HeroContent = () => {
       >
         <motion.div
           animate={{
-            rotateY: 0,
+            y: [0, -20, 0],
+            rotateX: [0, 5, 0],
+            rotateY: [0, -5, 0],
           }}
           transition={{
-            duration: 0,
+            duration: 6,
+            ease: "easeInOut",
+            repeat: Infinity,
+            repeatType: "reverse",
+          }}
+          style={{
+            perspective: "1000px",
+            transformStyle: "preserve-3d",
           }}
           className="w-full h-full"
         >
-          <Image
-            src="/mainIconsdark.svg"
-            alt="work icons"
-            layout="fill"
-            objectFit="contain"
-          />
+          <motion.div
+            whileHover={{
+              scale: 1.05,
+              rotateX: 10,
+              rotateY: -10,
+              transition: { duration: 0.3 },
+            }}
+            className="w-full h-full relative"
+          >
+            <Image
+              src="/mainIconsdark.svg"
+              alt="work icons"
+              layout="fill"
+              objectFit="contain"
+              className="drop-shadow-2xl"
+            />
+          </motion.div>
         </motion.div>
       </motion.div>
     </motion.div>
