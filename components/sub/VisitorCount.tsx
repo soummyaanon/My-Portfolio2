@@ -1,27 +1,31 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { FaEye } from 'react-icons/fa';
 
 const VisitorCount = () => {
   const [count, setCount] = useState(0);
 
-  useEffect(() => {
-    const fetchCount = async () => {
-      try {
-        const response = await fetch('/api/visitorCount', { method: 'POST' });
-        if (!response.ok) {
-          throw new Error('Failed to fetch visitor count');
-        }
-        const data = await response.json();
-        setCount(data.count);
-      } catch (error) {
-        console.error('Error fetching visitor count:', error);
+  const fetchCount = useCallback(async () => {
+    try {
+      const response = await fetch('/api/visitorCount', { method: 'POST' });
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
       }
-    };
-
-    fetchCount();
+      const data = await response.json();
+      if (typeof data.count === 'number') {
+        setCount(data.count);
+      } else {
+        throw new Error('Invalid data format');
+      }
+    } catch (error) {
+      console.error('Error fetching visitor count:', error);
+    }
   }, []);
+
+  useEffect(() => {
+    fetchCount();
+  }, [fetchCount]);
 
   return (
     <div className="flex items-center text-gray-300 text-sm">
