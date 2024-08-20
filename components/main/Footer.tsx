@@ -1,7 +1,7 @@
 import React from "react";
 import { FaGithub, FaDiscord, FaInstagram, FaLinkedin, FaEnvelope } from "react-icons/fa";
 import { FaSquareXTwitter } from "react-icons/fa6";
-import VisitorCount from "../sub/VisitorCount";
+
 
 type SocialItem = {
   href: string;
@@ -39,7 +39,7 @@ const Footer = () => {
               </a>
             ))}
           </div>
-          <VisitorCount />
+         
           <p className="text-sm font-semibold mt-4 text-center">
             &copy; {currentYear} @soumyaanon. All rights reserved.
           </p>
