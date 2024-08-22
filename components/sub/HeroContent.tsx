@@ -175,23 +175,15 @@ const HeroContent = () => {
           }}
           className="w-full h-full"
         >
-          <motion.div
-            whileHover={{
-              scale: 1.05,
-              rotateX: 10,
-              rotateY: -10,
-              transition: { duration: 0.3 },
-            }}
-            className="w-full h-full relative"
-          >
-            <Image
-              src="/mainIconsdark.svg"
-              alt="work icons"
-              layout="fill"
-              objectFit="contain"
-              className="drop-shadow-2xl"
-            />
-          </motion.div>
+<motion.div className="w-full h-full relative">
+  <Image
+    src="/mainIconsdark.svg"
+    alt="work icons"
+    layout="fill"
+    objectFit="contain"
+    className="drop-shadow-2xl"
+  />
+</motion.div>
         </motion.div>
       </motion.div>
     </motion.div>
