@@ -47,35 +47,35 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ src, title, description, url,
 
 const Projects: React.FC = () => {
   const projects = [
-    {
-      src: "/NextWebsite.png",
-      title: "BLOGZUE",
-      description: "This Blogger App allows users to create, read, update, and delete posts. It features topic categorization, commenting, and a user-friendly interface.",
-      url: "https://blogzue.vercel.app",
-      github: "https://github.com/soummyaanon/Blogzue"
-    },
-    {
-      src: "/CardImage.png",
-      title: ".SNIKERS",
-      description: "Explore chic fashion at Elegance Emporium! Enjoy effortless browsing, diverse collections, and secure checkout.",
-      url: "https://ecoomerce-phi.vercel.app/",
-      github: "https://github.com/soummyaanon/Ecoomerce"
-    },
-    {
-      src: "/book.png",
-      title: "BOOK-Pedia",
-      description: "Discover Your Next Favorite Read with Book Pedia - A Simple Web App. Hey book lovers! 📖 I just developed a web app called Book Pedia to make finding your next read super easy.",
-      url: "https://bookpediaa.vercel.app/",
-      github: "https://github.com/soummyaanon/BOOK-Pedia"
-    },
-    {
-      src: "/SpaceWebsite.png",
-      title: "Portfolio Website",
-      description: "Showcasing my skills, projects, and experiences, this portfolio website is built with modern web technologies.",
-      url: "https://soumya-ranjan.tech/",
-      github: "https://github.com/soummyaanon/My-Portfolio2"
-    }
-  ];
+      {
+        src: "/NextWebsite.png",
+        title: "BLOGZUE",
+        description: "This Blogger App allows users to create, read, update, and delete posts. It features topic categorization, commenting, and a user-friendly interface.",
+        url: "https://blogzue.vercel.app",
+        github: "https://github.com/soummyaanon/Blogzue"
+      },
+      {
+        src: "/CardImage.png",
+        title: "noteX",
+        description: "Experience the future of note-taking with noteX, powered by Google Gemini Pro. Enjoy seamless integration Colaboration features, advanced features, and secure cloud By powerdby Appwrite storage. This Project is Still In Developemnet Phase",
+        url: "https://notextest.vercel.app/",
+        github: "https://github.com/soummyaanon/-noteX"
+      },
+      {
+        src: "/book.png",
+        title: "BOOK-Pedia",
+        description: "Discover Your Next Favorite Read with Book Pedia - A Simple Web App. Hey book lovers! 📖 I just developed a web app called Book Pedia to make finding your next read super easy.",
+        url: "https://bookpediaa.vercel.app/",
+        github: "https://github.com/soummyaanon/BOOK-Pedia"
+      },
+      {
+        src: "/SpaceWebsite.png",
+        title: "Portfolio Website",
+        description: "Showcasing my skills, projects, and experiences, this portfolio website is built with modern web technologies.",
+        url: "https://soumya-ranjan.tech/",
+        github: "https://github.com/soummyaanon/My-Portfolio2"
+      }
+    ];
 
   return (
     <section className="flex flex-col items-center justify-center py-20" id="projects">
