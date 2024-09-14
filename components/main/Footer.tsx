@@ -14,7 +14,7 @@ const Footer = () => {
   
   const socialItems: SocialItem[] = [
     { href: "https://github.com/soummyaanon", icon: <FaGithub size={24} />, title: "GitHub" },
-    { href: "https://www.discord.com/soumyapanda2000", icon: <FaDiscord size={24} />, title: "Discord" },
+    { href: "https://discord.gg/wvmnHCHM", icon: <FaDiscord size={24} />, title: "Discord" },
     { href: "https://instagram.com/anonymous__warior", icon: <FaInstagram size={24} />, title: "Instagram" },
     { href: "https://twitter.com/Thesourya2000", icon: <FaSquareXTwitter size={24} />, title: "Twitter" },
     { href: "https://www.linkedin.com/in/soumypanda", icon: <FaLinkedin size={24} />, title: "LinkedIn" },
