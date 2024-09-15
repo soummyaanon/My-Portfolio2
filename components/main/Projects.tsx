@@ -58,7 +58,7 @@ const Projects: React.FC = () => {
         src: "/CardImage.png",
         title: "noteX",
         description: "Experience the future of note-taking with noteX, powered by Google Gemini Pro. Enjoy seamless integration Colaboration features, advanced features, and secure cloud By powerdby Appwrite storage. This Project is Still In Developemnet Phase",
-        url: "https://noteex.vercel.app",
+        url: "https://notex.studio",
         github: "https://github.com/soummyaanon/-noteX"
       },
       {
